@@ -10,6 +10,7 @@ import { Component, ViewContainerRef, ComponentFactoryResolver } from '@angular/
       </h1>
     </div>
     <button (click)="loadLazyComponent()">load lazy component</button>
+    <button (click)="loadAnotherLazyComponent()">load another lazy component</button>
   `,
   styles: []
 })
@@ -28,6 +29,16 @@ export class AppComponent {
     import("./lazy/lazy.component").then(({ LazyComponent }) => {
       this.viewContainerRef.createComponent(
         this.cfr.resolveComponentFactory(LazyComponent)
+      );
+    });
+  }
+
+  loadAnotherLazyComponent() {
+    this.viewContainerRef.clear();
+
+    import("./another-lazy/another-lazy.component").then(({ AnotherLazyComponent }) => {
+      this.viewContainerRef.createComponent(
+        this.cfr.resolveComponentFactory(AnotherLazyComponent)
       );
     });
   }

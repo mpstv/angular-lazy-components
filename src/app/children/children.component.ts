@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-children',
@@ -17,3 +17,11 @@ export class ChildrenComponent implements OnInit {
   }
 
 }
+
+@NgModule({
+  imports: [],
+  exports: [ChildrenComponent],
+  declarations: [ChildrenComponent],
+  providers: [],
+})
+export class ChildrenModule { }

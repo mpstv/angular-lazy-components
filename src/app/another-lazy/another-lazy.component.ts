@@ -2,10 +2,10 @@ import { Component, OnInit, NgModule } from '@angular/core';
 import { ChildrenModule } from '../children/children.component';
 
 @Component({
-  selector: 'app-lazy',
-  templateUrl: 'lazy.component.html'
+  selector: 'app-another-lazy',
+  templateUrl: 'another-lazy.component.html'
 })
-export class LazyComponent implements OnInit {
+export class AnotherLazyComponent implements OnInit {
 
   constructor() { }
 
@@ -17,7 +17,7 @@ export class LazyComponent implements OnInit {
 @NgModule({
   imports: [ChildrenModule],
   exports: [],
-  declarations: [LazyComponent],
+  declarations: [AnotherLazyComponent],
   providers: [],
 })
-class LazyModule { }
+class AnotherLazyModule { }
