@@ -3,13 +3,7 @@ import { ChildrenComponent } from '../children/children.component';
 
 @Component({
   selector: 'app-lazy',
-  template: `
-    <p>
-      lazy works!
-    </p>
-    <app-children></app-children>
-  `,
-  styles: []
+  templateUrl: 'lazy.component.html'
 })
 export class LazyComponent implements OnInit {
 
