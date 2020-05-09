@@ -1,4 +1,5 @@
 import { Component, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
+import { LazyModule } from './lazy/lazy.module';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,6 @@ import { Component, ViewContainerRef, ComponentFactoryResolver } from '@angular/
       </h1>
     </div>
     <button (click)="loadLazyComponent()">load lazy component</button>
-    <button (click)="loadAnotherLazyComponent()">load another lazy component</button>
   `,
   styles: []
 })
@@ -26,19 +26,9 @@ export class AppComponent {
   loadLazyComponent() {
     this.viewContainerRef.clear();
 
-    import("./lazy/lazy.component").then(({ LazyComponent }) => {
+    import("./lazy/lazy.module").then(({ LazyModule }) => {
       this.viewContainerRef.createComponent(
-        this.cfr.resolveComponentFactory(LazyComponent)
-      );
-    });
-  }
-
-  loadAnotherLazyComponent() {
-    this.viewContainerRef.clear();
-
-    import("./another-lazy/another-lazy.component").then(({ AnotherLazyComponent }) => {
-      this.viewContainerRef.createComponent(
-        this.cfr.resolveComponentFactory(AnotherLazyComponent)
+        this.cfr.resolveComponentFactory(LazyModule.getComp())
       );
     });
   }

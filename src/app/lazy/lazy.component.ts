@@ -1,5 +1,4 @@
-import { Component, OnInit, NgModule } from '@angular/core';
-import { ChildrenModule } from '../children/children.component';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-lazy',
@@ -14,10 +13,3 @@ export class LazyComponent implements OnInit {
 
 }
 
-@NgModule({
-  imports: [ChildrenModule],
-  exports: [],
-  declarations: [LazyComponent],
-  providers: [],
-})
-class LazyModule { }
